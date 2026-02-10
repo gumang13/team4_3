@@ -1,4 +1,4 @@
-package team4_3;
+package team4_3_Claimhistory;
 
 import java.util.List;
 import java.util.Scanner;

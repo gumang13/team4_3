@@ -1,4 +1,4 @@
-	package team4_3;
+package team4_3_Claimhistory;
 
 import java.sql.Connection;         //DB서버 연결
 import java.sql.DriverManager;      //DB서버 연결
