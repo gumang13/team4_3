@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 
 public class ItemDAO {
-	    private String dbUrl ="jdbc:mysql://localhost:3306/team4?serverTimezone=Asia/Seoul";
+	    private String dbUrl ="jdbc:mysql://codevlab.kr:3306/team4?serverTimezone=Asia/Seoul";
         private	String dbUsr ="team4";
         private	String dbPwd ="123456";
 	    private Scanner kbd = new Scanner(System.in);

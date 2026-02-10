@@ -3,7 +3,7 @@ package team4_3;
 public class OwnerDTO {
 
 	
-	 
+	  
 	  private String owner_name;
 	  private String phone;
 	  public OwnerDTO(String owner_name, String phone) {
