@@ -1,4 +1,4 @@
-package team4_3;
+package LostItemManagement;
 
 import java.sql.Connection;
 import java.sql.Date;
@@ -147,13 +147,14 @@ public class ItemDAO {
      			conn=DriverManager.getConnection(dbUrl,dbUsr,dbPwd);
      			//-----------------------------------------------------
      			System.out.println("수정할 분실물의 id를 입력하세요");
-     			long id=kbd.nextLong();
+     			String id_=kbd.nextLine();
+     			Long id =Long.parseLong(id_);
      			//이름 특징 상태 카테고리 날짜
      			System.out.println("수정할 이름을 입력하세요");
      			String name=kbd.nextLine();
      			System.out.println("수정할 특징을 입력하세요");
      			String feature=kbd.nextLine();
-     			System.out.println("수정할 상태를 입력하세요(수령 미수령)");
+     			System.out.println("수정할 상태를 입력하세요(수령 보관)");
      			String status=kbd.nextLine();
      			System.out.println("수정할 카테고리를 입력하세요");
      			String category=kbd.nextLine();
@@ -161,7 +162,7 @@ public class ItemDAO {
      			String item_storage = kbd.nextLine();
 
      			String sql ="";
-     			sql += "update lost_item set item_name = ?, feature = ?, status = ?, category = ? where id = ? ";
+     			sql += "update lost_item set item_name = ?, feature = ?, status = ?, category = ?, item_storage=?  where id = ? ";
     			pstmt = conn.prepareStatement(sql);
     			pstmt.setString(1, name);
     			pstmt.setString(2, feature);
@@ -178,6 +179,7 @@ public class ItemDAO {
      			}
      	   }catch(Exception e){
      		   System.out.println("잘못된 입력입니다");
+     		   e.printStackTrace();
      	   }finally {
      		   dbClose(rs, pstmt, conn);
      	   }

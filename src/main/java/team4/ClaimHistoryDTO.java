@@ -1,5 +1,4 @@
-package team4_3_Claimhistory;
-
+package team4;
 import java.sql.Timestamp;
 import java.util.Scanner;
 
@@ -81,5 +80,3 @@ public class ClaimHistoryDTO {
 
 
 }
-
-

@@ -1,4 +1,4 @@
-package team4_3_Claimhistory;
+package LostItemManagement;
 
 import java.sql.Connection;         //DB서버 연결
 import java.sql.DriverManager;      //DB서버 연결
@@ -10,11 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-//  집
-//	String dbUrl = "jdbc:mysql://localhost:3306/javaExample?serverTimezone=Asia/Seoul";
-//	String dbUsr = "javauser";
-//  String dbPwd = "1234
 
+  // 팀원 4 
 public class ClaimHistoryDAO {
 
 //  DB 서버 연결을 위한 드라이버, 주소 , 아이디 ,비번
@@ -22,6 +19,7 @@ public class ClaimHistoryDAO {
 //	DB 드라이버
 	String dbUrl = "jdbc:mysql://codevlab.kr:3306/team4?serverTimezone=Asia/Seoul";
 //    DB 주소
+//	String dbUsr = "javauser";
 	String dbUsr = "team4";
 //  DB 아이디 
 	String dbPwd = "123456";
@@ -32,7 +30,7 @@ public class ClaimHistoryDAO {
 		int result = 0;
 		String sql="""
                       insert into claim_history
-                      (lost_item_id, owner_claim_id, date) 
+                      (lost_item_id, owner_claim_id, action_date) 
                       values (?, ?, now())
                    """;
 		try (																	  //코드가 끝나면 자동실행
@@ -52,11 +50,12 @@ public class ClaimHistoryDAO {
 	//2분실물별 이력 조회
 	public List<ClaimHistoryDTO> selectAllLostItemId(long lostItemId){
 		List<ClaimHistoryDTO> list = new ArrayList<>();
+		list=null;
 		String sql = """
-				        select id, lost_item_id, owner_claim_id, date
+				        select id, lost_item_id, owner_claim_id, action_date
 				        from claim_history
 				        Where lost_item_id=?
-				        order by date desc
+				        order by action_date desc
 				     """;
 		
 		try (

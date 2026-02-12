@@ -1,4 +1,4 @@
-package team4_3_Claimhistory;
+package team4;
 
 import java.util.List;
 import java.util.Scanner;
@@ -28,9 +28,9 @@ public class Main {
 						);
 
 			    if(result > 0) {
-			        System.out.println("✔ 수령 처리 완료");
+			        System.out.println(" 수령 처리 완료");
 			    } else {
-			        System.out.println("✖ 수령 처리 실패");
+			        System.out.println(" 수령 처리 실패");
 			    }
 				
 				
